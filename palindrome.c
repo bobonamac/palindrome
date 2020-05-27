@@ -1,6 +1,5 @@
 /* 
-Takes a word and checks if it's a palindrom or not
-First let's see if I can take a word and return the number of letters in it...
+Takes a word and checks if it's a palindrome
 */
 
 #include<stdio.h>

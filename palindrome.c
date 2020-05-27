@@ -30,12 +30,14 @@ int main(void) {
 		countUp++;
 	}
 
-	// compare words
+	// compare forwards and backwards
 	isPalindrome = strcmp(word, wordReverse);
 
+	// sanity check
 	printf("\nword: %s\nwordReverse: %s\niPalondrome: %d\ncountUp: %d\nhowManyLetters: %d\n\n", 
 		word, wordReverse, isPalindrome, countUp, howManyLetters);
 
+	// output result
 	if (isPalindrome == 0) {
 		printf("Your word %s is a palindrome!\n", word);
 	}

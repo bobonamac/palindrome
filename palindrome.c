@@ -9,7 +9,7 @@ Takes a word and checks if it's a palindrome
 int main(void) {
 	char word[MAX_STRING_LENGTH];
 	char wordReverse[MAX_STRING_LENGTH];
-	int howManyLetters = 0;
+	int letterCount = 0;
 	int countUp = 0;
 	int isPalindrome;
 
@@ -18,14 +18,14 @@ int main(void) {
 	scanf("%s", word);
 
 	// count letters
-	while(word[howManyLetters] != '\0') {
-		howManyLetters++;
+	while(word[letterCount] != '\0') {
+		letterCount++;
 	}
 
 	// fill wordReverse
-	while(howManyLetters > 0) {
-		wordReverse[countUp] = word[howManyLetters];
-		howManyLetters--;
+	while(letterCount > 0) {
+		wordReverse[countUp] = word[letterCount];
+		letterCount--;
 		countUp++;
 	}
 
@@ -33,13 +33,13 @@ int main(void) {
 	isPalindrome = strcmp(word, wordReverse);
 
 	// sanity check
-	printf("\nword: %s\nwordReverse: %s\niPalondrome: %d\ncountUp: %d\nhowManyLetters: %d\n\n", 
-		word, wordReverse, isPalindrome, countUp, howManyLetters);
+	printf("\nword: %s\nwordReverse: %s\niPalondrome: %d\ncountUp: %d\nletterCount: %d\n\n", 
+		word, wordReverse, isPalindrome, countUp, letterCount);
 
 	// output result
 	if (isPalindrome == 0) {
-		printf("Your word %s is a palindrome!\n", word);
+		printf("%s is a palindrome!\n", word);
 	}
-	else printf("Your word %s is not a palindrome.\n", word);
+	else printf("%s is not a palindrome.\n", word);
 }
 

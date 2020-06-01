@@ -23,21 +23,34 @@ int main(void) {
 		letterCount++;
 	}
 
-	// fill wordReverse
-	while(letterCount > 0) {
-		wordReverse[countUp] = word[letterCount - 1];
-		letterCount--;
-		countUp++;
-	}
-	// add null terminator to wordReverse
-	wordReverse[countUp] = '\0';
+	// // fill wordReverse
+	// while(letterCount > 0) {
+	// 	wordReverse[countUp] = word[letterCount - 1];
+	// 	letterCount--;
+	// 	countUp++;
+	// }
+	// // add null terminator to wordReverse
+	// wordReverse[countUp] = '\0';
 
-	// compare forwards and backwards
-	isPalindrome = strcmp(word, wordReverse);
+	// // compare forwards and backwards
+	// isPalindrome = strcmp(word, wordReverse);
+
+	// Mike's method
+	while(letterCount - 1 >= countUp) {
+		if(word[countUp] == word[letterCount - 1]) {
+			letterCount--;
+			countUp++;
+			isPalindrome = 0;
+		}
+		else {
+			isPalindrome = 1;
+			break;
+		}
+	}
 
 	// sanity check
-	printf("\nword: %s\nwordReverse: %s\niPalondrome: %d\ncountUp: %d\nletterCount: %d\n\n", 
-		word, wordReverse, isPalindrome, countUp, letterCount);
+	printf("\nword: %s\n\niPalondrome: %d\ncountUp: %d\nletterCount: %d\n\n", 
+		word, isPalindrome, countUp, letterCount);
 
 	// output result
 	if (isPalindrome == 0) {

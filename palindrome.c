@@ -4,6 +4,7 @@ Takes a word and checks if it's a palindrome
 
 #include<stdio.h>
 #include<string.h>
+
 #define MAX_STRING_LENGTH 25
 
 int main(void) {
@@ -13,7 +14,7 @@ int main(void) {
 	int countUp = 0;
 	int isPalindrome;
 
-
+	// prompt user
 	printf("Enter a word: ");
 	scanf("%s", word);
 
@@ -24,10 +25,12 @@ int main(void) {
 
 	// fill wordReverse
 	while(letterCount > 0) {
-		wordReverse[countUp] = word[letterCount];
+		wordReverse[countUp] = word[letterCount - 1];
 		letterCount--;
 		countUp++;
 	}
+	// add null terminator to wordReverse
+	wordReverse[countUp] = '\0';
 
 	// compare forwards and backwards
 	isPalindrome = strcmp(word, wordReverse);
@@ -38,8 +41,8 @@ int main(void) {
 
 	// output result
 	if (isPalindrome == 0) {
-		printf("%s is a palindrome!\n", word);
+		printf("Result: %s is a palindrome!\n", word);
 	}
-	else printf("%s is not a palindrome.\n", word);
+	else printf("Result: %s is not a palindrome.\n", word);
 }
 
